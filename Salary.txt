@@ -1,0 +1,34 @@
+x = datetime.datetime.now()
+yy = x.year
+mm = x.month
+dd = x.day
+name = input('Please Enter Your Name: ')
+print('enter your birthday date:')
+
+d = int(input('day: '))
+m = int(input('month: '))
+y = int(input('year: '))
+
+D = 0
+M = 0
+Y = 0
+
+if dd < d:
+    dd += 30
+    mm -= 1
+    d = dd - d
+else:
+    d = dd - d
+
+if mm < m:
+    mm += 12
+    yy -= 1
+    m = mm - m
+else:
+    m = mm - m
+y = yy - y
+
+print('--'*25)
+print('your age is:', y, 'years,', m, 'months,', d, 'days. ')
+x = datetime.datetime(y,m,d)
+print(name,'your birth date is: ', x.strftime('%A'))
